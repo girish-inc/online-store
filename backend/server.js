@@ -14,7 +14,12 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: process.env.nodeEnvironment === 'production' 
+    ? ['https://online-store-frontend.vercel.app', 'https://online-store-frontend-*.vercel.app'] 
+    : 'http://localhost:3000',
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

@@ -9,7 +9,7 @@ import { refreshToken, logout } from '../redux/slices/userSlice';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:5000/api',
+  baseURL: process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'production' ? 'https://online-store-backend.onrender.com/api' : 'http://localhost:5000/api'),
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

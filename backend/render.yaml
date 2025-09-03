@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: online-store-backend
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: serverPort
+        value: 10000
+      - key: nodeEnvironment
+        value: production
+      - key: databaseUrl
+        sync: false
+      - key: jwtSecret
+        sync: false
+      - key: jwtAccessTokenExpire
+        value: 15m
+    healthCheckPath: /
+    autoDeploy: true
