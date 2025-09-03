@@ -9,8 +9,7 @@
     "frontend": "cd frontend && npm start",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
-    "build": "node build.js",
-    "vercel-build": "node build.js"
+    "build": "node build.js"
   },
   "keywords": [
     "react",
