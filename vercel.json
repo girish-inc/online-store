@@ -23,6 +23,17 @@
   ],
   "env": {
     "serverPort": "5000",
-    "nodeEnvironment": "production"
+    "nodeEnvironment": "production",
+    "databaseUrl": "mongodb+srv://girish:pass123@cluster0.faymtqk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
+    "jwtSecret": "mySecretJWTKey123456789",
+    "jwtAccessTokenExpire": "5m",
+    "jwtRefreshTokenExpire": "30d",
+    "cloudinaryCloudName": "dpg8ckc32",
+    "cloudinaryApiKey": "769687269915163",
+    "cloudinaryApiSecret": "O9rQYmv1uSYrUfzQIol_e8Wdkt0",
+    "emailService": "gmail",
+    "emailUser": "your_email@gmail.com",
+    "emailPassword": "your_app_password",
+    "frontendUrl": "https://online-store-chi-azure.vercel.app"
   }
 }
