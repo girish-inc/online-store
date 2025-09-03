@@ -22,14 +22,14 @@ export const addToCart = createAsyncThunk(
       }
       
       // First get product details
-      const { data: product } = await api.get(`/api/products/${id}`);
+      const { data: product } = await api.get(`/products/${id}`);
 
       // Call backend cart API to add item (if user is authenticated)
       const { user } = getState();
       if (user && user.userInfo) {
         try {
           await api.post(
-            '/api/cart',
+            '/cart',
             {
               productId: id,
               quantity: qty,
@@ -93,7 +93,7 @@ export const removeFromCart = createAsyncThunk(
       const { user } = getState();
       if (user && user.userInfo) {
         try {
-          await api.delete(`/api/cart/${id}`);
+          await api.delete(`/cart/${id}`);
         } catch (apiError) {
           // If API call fails, continue with localStorage only
           console.warn('Cart API call failed, using localStorage only:', apiError.message);

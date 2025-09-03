@@ -22,7 +22,7 @@ export const login = createAsyncThunk(
   async ({ email, password }, { rejectWithValue }) => {
     try {
       const { data } = await api.post(
-        '/api/users/login',
+        '/users/login',
         { email, password }
       );
 
@@ -43,7 +43,7 @@ export const register = createAsyncThunk(
   async ({ name, email, password }, { rejectWithValue }) => {
     try {
       const { data } = await api.post(
-        '/api/users/register',
+        '/users/register',
         { name, email, password }
       );
 
@@ -63,7 +63,7 @@ export const getUserProfile = createAsyncThunk(
   'user/getUserProfile',
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await api.get('/api/users/profile');
+      const { data } = await api.get('/users/profile');
       return data;
     } catch (error) {
       return rejectWithValue(
@@ -79,7 +79,7 @@ export const updateUserProfile = createAsyncThunk(
   'user/updateUserProfile',
   async (userData, { rejectWithValue }) => {
     try {
-      const { data } = await api.put('/api/users/profile', userData);
+      const { data } = await api.put('/users/profile', userData);
       setUserToStorage(data);
       return data;
     } catch (error) {
@@ -111,7 +111,7 @@ export const refreshToken = createAsyncThunk(
         },
       };
 
-      const { data } = await api.post('/api/users/refresh-token', {}, config);
+      const { data } = await api.post('/users/refresh-token', {}, config);
       
       // Update user info with new tokens
       const updatedUserInfo = {

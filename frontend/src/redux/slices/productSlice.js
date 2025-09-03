@@ -7,7 +7,7 @@ export const fetchProducts = createAsyncThunk(
   async ({ keyword = '', page = 1, limit = 10 }, { rejectWithValue }) => {
     try {
       const { data } = await api.get(
-        `/api/products?keyword=${keyword}&page=${page}&limit=${limit}`
+        `/products?keyword=${keyword}&page=${page}&limit=${limit}`
       );
       return data;
     } catch (error) {
@@ -24,7 +24,7 @@ export const fetchProductDetails = createAsyncThunk(
   'products/fetchProductDetails',
   async (id, { rejectWithValue }) => {
     try {
-      const { data } = await api.get(`/api/products/${id}`);
+      const { data } = await api.get(`/products/${id}`);
       return data;
     } catch (error) {
       return rejectWithValue(
