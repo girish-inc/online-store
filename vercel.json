@@ -17,28 +17,28 @@
       "dest": "backend/server.js"
     },
     {
-      "handle": "filesystem",
-      "src": "/static/(.*)"
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
     },
     {
-      "handle": "filesystem",
-      "src": "/assets/(.*)"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
-      "handle": "filesystem",
-      "src": "/favicon.ico"
+      "src": "/favicon.ico",
+      "dest": "/favicon.ico"
     },
     {
-      "handle": "filesystem",
-      "src": "/manifest.json"
+      "src": "/manifest.json",
+      "dest": "/manifest.json"
     },
     {
-      "handle": "filesystem",
-      "src": "/logo192.png"
+      "src": "/logo192.png",
+      "dest": "/logo192.png"
     },
     {
-      "handle": "filesystem",
-      "src": "/logo512.png"
+      "src": "/logo512.png",
+      "dest": "/logo512.png"
     },
     {
       "src": "/(.*)",
